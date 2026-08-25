@@ -1,5 +1,5 @@
 # WARN: this file will get overwritten by $ cachix use <name>
-{ pkgs, lib, ... }:
+{ lib, ... }:
 
 let
   folder = ./cachix;
@@ -9,5 +9,4 @@ let
 in
 {
   inherit imports;
-  nix.settings.substituters = [ "https://cache.nixos.org/" ];
 }

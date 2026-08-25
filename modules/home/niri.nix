@@ -1,8 +1,5 @@
-{ pkgs, ... }:
+{ ... }:
 
 {
-  programs.niri = {
-    enable = true;
-    extraConfig = builtins.readFile ./files/config.kdl;
-  };
+  xdg.configFile."niri/config.kdl".source = ./files/config.kdl;
 }
