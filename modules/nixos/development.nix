@@ -6,6 +6,7 @@
     helix
     pkgs-unstable.zed-editor-fhs
 
+    pkgs-unstable.codex
     git
     difftastic
     gh
