@@ -96,14 +96,22 @@ window-rule {
     open-floating true
 }
 
+// Enable blur behind the Alacritty terminal.
 window-rule {
-    match app-id=r#"^org\.keepassxc\.KeePassXC$"#
-    match app-id=r#"^org\.gnome\.World\.Secrets$"#
+    match app-id="^Alacritty$"
 
-    block-out-from "screen-capture"
+    background-effect {
+        blur true
+    }
+}
 
-    // Use this instead if you want them visible on third-party screenshot tools.
-    // block-out-from "screencast"
+// Enable blur behind the fuzzel launcher.
+layer-rule {
+    match namespace="^launcher$"
+
+    background-effect {
+        blur true
+    }
 }
 
 window-rule {
