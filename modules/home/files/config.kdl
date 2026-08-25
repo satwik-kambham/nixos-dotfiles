@@ -22,7 +22,7 @@ input {
 
 output "eDP-1" {
     // mode "1920x1080"
-    scale 1.25
+    scale 1.0
     transform "normal"
     background-color "#11111b"
 }
@@ -37,7 +37,7 @@ layout {
         proportion 1.0
     }
 
-    default-column-width { proportion 0.5; }
+    default-column-width { proportion 1.0; }
 
     focus-ring {
         width 2
@@ -81,8 +81,7 @@ spawn-at-startup "xwayland-satellite"
 spawn-at-startup "waybar"
 spawn-at-startup "nm-applet"
 spawn-at-startup "awww-daemon"
-spawn-at-startup "wl-paste --type text --watch cliphist store"
-spawn-at-startup "wl-paste --type image --watch cliphist store"
+spawn-sh-at-startup "wl-paste --type text --watch cliphist store"
 
 prefer-no-csd
 
@@ -120,9 +119,9 @@ binds {
     Mod+Shift+Slash { show-hotkey-overlay; }
 
     Mod+Q hotkey-overlay-title="Open a Terminal: alacritty" { spawn "alacritty"; }
-    // Mod+Space hotkey-overlay-title="Run an Application: rofi" { spawn "sh" "-c" "rofi -show drun -show-icons"; }
+    Mod+Space hotkey-overlay-title="Run an Application: fuzzel" { spawn "fuzzel"; }
     Mod+F hotkey-overlay-title="Open browser: firefox" { spawn "firefox"; }
-    // Mod+Shift+V hotkey-overlay-title="Open clipboard history" { spawn "sh" "-c" "cliphist list | rofi -dmenu | cliphist decode | wl-copy"; }
+    Mod+Shift+V hotkey-overlay-title="Open clipboard history" { spawn "sh" "-c" "cliphist list | fuzzel -dmenu | cliphist decode | wl-copy"; }
 
     XF86AudioRaiseVolume allow-when-locked=true { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "1%+"; }
     XF86AudioLowerVolume allow-when-locked=true { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "1%-"; }
