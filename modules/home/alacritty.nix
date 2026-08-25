@@ -10,6 +10,7 @@
         normal.family = "MonaspiceNe Nerd Font";
       };
       window = {
+        opacity = 0.8;
         padding = {
           x = 5;
           y = 5;
