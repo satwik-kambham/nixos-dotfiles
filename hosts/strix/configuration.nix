@@ -46,7 +46,7 @@
   };
 
   environment.systemPackages = with pkgs; [
-    llamacpp_pkgs.cuda
+    # llamacpp_pkgs.cuda
 
     (btop.override {
       cudaSupport = true;
