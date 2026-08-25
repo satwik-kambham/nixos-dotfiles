@@ -4,6 +4,7 @@
   environment.systemPackages = with pkgs; [
     # Text Editors
     helix
+    neovim
     pkgs-unstable.zed-editor-fhs
 
     pkgs-unstable.codex

@@ -5,7 +5,7 @@
   programs.helix = {
     enable = true;
     settings = {
-      theme = "kanagawa";
+      theme = "catppuccin_mocha_transparent";
       editor.soft-wrap.enable = true;
       editor.true-color = true;
       editor.color-modes = true;
