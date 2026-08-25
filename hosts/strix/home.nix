@@ -10,6 +10,7 @@
     ../../modules/home/alacritty.nix
     ../../modules/home/dunst.nix
     ../../modules/home/gtk.nix
+    ../../modules/home/niri.nix
     ../../modules/home/qt.nix
     ../../modules/home/waybar.nix
   ];

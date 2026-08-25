@@ -31,7 +31,8 @@
       specialArgs = {
         inherit inputs llamacpp_pkgs pkgs-unstable;
       };
-    in {
+    in
+    {
       formatter = nixpkgs.lib.genAttrs [ "x86_64-linux" "aarch64-linux" ] (
         system: nixpkgs.legacyPackages.${system}.nixpkgs-fmt
       );

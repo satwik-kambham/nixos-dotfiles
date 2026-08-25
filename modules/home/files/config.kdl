@@ -5,44 +5,25 @@ input {
     }
 
     touchpad {
-        // off
         tap
         drag true
-        // drag-lock
         natural-scroll
     }
 
     mouse {
         accel-profile "flat"
         accel-speed -0.75
-        // scroll-method "no-scroll"
     }
 
-    // Uncomment this to make the mouse warp to the center of newly focused windows.
-    // warp-mouse-to-focus
-
-    // Focus windows and outputs automatically when moving the mouse into them.
-    // Setting max-scroll-amount="0%" makes it work only on windows already fully on screen.
-    // focus-follows-mouse max-scroll-amount="0%"
+    warp-mouse-to-focus
 
     disable-power-key-handling
 }
 
 output "eDP-1" {
-    // off
-
     // mode "1920x1080"
-    scale 1
+    scale 1.25
     transform "normal"
-    background-color "#11111b"
-}
-
-output "HDMI-A-1" {
-    // off
-
-    // mode "1280x720@60.000"
-    scale 1
-    focus-at-startup
     background-color "#11111b"
 }
 
@@ -56,17 +37,13 @@ layout {
         proportion 1.0
     }
 
-    // default-column-width { }
     default-column-width { proportion 0.5; }
 
     focus-ring {
-        // off
-
         width 2
         active-color "#cba6f7"
         inactive-color "#505050"
         active-gradient from="#cba6f777" to="#f38ba877" angle=45
-        // active-gradient from="#f00f" to="#0f05" angle=45 in="oklch longer hue"
         urgent-color "#9b0000"
     }
 
@@ -76,12 +53,6 @@ layout {
         spread 5
         offset x=0 y=5
         color "#0007"
-    }
-    struts {
-        // left 64
-        // right 64
-        // top 64
-        // bottom 64
     }
 }
 
@@ -100,7 +71,6 @@ hotkey-overlay {
 
 cursor {
     xcursor-size 16
-    // hide-when-typing
 }
 
 environment {
@@ -109,9 +79,8 @@ environment {
 
 spawn-at-startup "xwayland-satellite"
 spawn-at-startup "waybar"
-// spawn-at-startup "eww open barwindow"
 spawn-at-startup "nm-applet"
-spawn-at-startup "swww-daemon"
+spawn-at-startup "awww-daemon"
 spawn-at-startup "wl-paste --type text --watch cliphist store"
 spawn-at-startup "wl-paste --type image --watch cliphist store"
 
@@ -121,7 +90,6 @@ screenshot-path "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
 
 animations {
     // off
-    // slowdown 3.0
 }
 
 window-rule {
@@ -152,11 +120,9 @@ binds {
     Mod+Shift+Slash { show-hotkey-overlay; }
 
     Mod+Q hotkey-overlay-title="Open a Terminal: alacritty" { spawn "alacritty"; }
-    Mod+Space hotkey-overlay-title="Run an Application: rofi" { spawn "sh" "-c" "rofi -show drun -show-icons"; }
+    // Mod+Space hotkey-overlay-title="Run an Application: rofi" { spawn "sh" "-c" "rofi -show drun -show-icons"; }
     Mod+F hotkey-overlay-title="Open browser: firefox" { spawn "firefox"; }
-    Mod+Shift+V hotkey-overlay-title="Open clipboard history" { spawn "sh" "-c" "cliphist list | rofi -dmenu | cliphist decode | wl-copy"; }
-    // Mod+F hotkey-overlay-title="Open browser: firefox" { spawn "firefox"; }
-    // Mod+F hotkey-overlay-title="Open browser: firefox" { spawn "firefox"; }
+    // Mod+Shift+V hotkey-overlay-title="Open clipboard history" { spawn "sh" "-c" "cliphist list | rofi -dmenu | cliphist decode | wl-copy"; }
 
     XF86AudioRaiseVolume allow-when-locked=true { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "1%+"; }
     XF86AudioLowerVolume allow-when-locked=true { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "1%-"; }
@@ -264,9 +230,4 @@ binds {
     // The allow-inhibiting=false property can be applied to other binds as well,
     // which ensures niri always processes them, even when an inhibitor is active.
     Mod+Escape allow-inhibiting=false { toggle-keyboard-shortcuts-inhibit; }
-
-    Mod+Shift+E { quit; }
-    Ctrl+Alt+Delete { quit; }
-
-    Mod+Shift+P { power-off-monitors; }
 }

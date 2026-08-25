@@ -20,7 +20,6 @@
   programs.rog-control-center.enable = true;
   services.asusd = {
     enable = true;
-    enableUserService = true;
   };
 
   # Nvidia Prime

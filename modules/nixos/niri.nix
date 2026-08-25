@@ -18,7 +18,7 @@
 
     waybar # Status Bar
     dunst # Notification Daemon
-    swww # Wallpaper Manager
+    awww # Wallpaper Manager
     waypaper # Wallpaper Manager
     fuzzel # Launcher
     networkmanagerapplet # NM Applet

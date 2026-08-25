@@ -42,7 +42,7 @@
 
   # Environment Variables
   environment.variables = {
-      EDITOR = "hx";
+    EDITOR = "hx";
   };
 
   environment.systemPackages = with pkgs; [
