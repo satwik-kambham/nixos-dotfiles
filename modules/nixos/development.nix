@@ -23,6 +23,10 @@
     zoxide
     bat
     nil
+    tree-sitter
+    gcc
+    curl
+    gnutar
   ];
 
   # direnv
