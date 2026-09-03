@@ -7,7 +7,8 @@
     neovim
     pkgs-unstable.zed-editor-fhs
 
-    pkgs-unstable.codex
+    # pkgs-unstable.codex
+    bubblewrap
     git
     difftastic
     gh
